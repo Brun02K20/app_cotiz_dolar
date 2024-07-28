@@ -32,9 +32,9 @@ export default function TabLayout() {
             }}
           />
           <Tabs.Screen
-            name="MasMonedas"
+            name="Historico"
             options={{
-              title: 'Más Monedas',
+              title: 'Histórico',
               tabBarIcon: ({ color }) => <FontAwesome size={28} name="euro" color={color} />,
             }}
           />

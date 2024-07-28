@@ -30,6 +30,16 @@ export default function CotizPrincipales() {
     setUsarDolarBlue(!usarDolarBlue);
   };
 
+  const formatDate = (isoString) => {
+    const date = new Date(isoString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Los meses empiezan desde 0
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    return `${day}-${month}-${year} ${hours}:${minutes}`;
+  };
+
   useEffect(() => {
     let valor = 0;
     if (inputHabilitado === 'dolares') {
@@ -88,15 +98,17 @@ export default function CotizPrincipales() {
         <View className="mt-4">
           {inputHabilitado === 'dolares' ? (
             <>
+              <Text className="text-white p-1 text-lg">Cantidad de Dólares</Text>
               <TextInput
-                className="bg-white p-2 rounded mb-2"
+                className="bg-slate-300 text-black p-2 rounded mb-2 focus:border-black placeholder-black"
                 placeholder="Cantidad de Dólares"
                 keyboardType="numeric"
                 value={cantidadDolares}
                 onChangeText={handleInputChange}
               />
+              <Text className="text-white p-1 text-lg focus:border-light-blue-500">Cantidad de Pesos</Text>
               <TextInput
-                className="bg-gray-300 p-2 rounded mb-2"
+                className="bg-slate-300 text-black p-2 rounded mb-2 focus:border-black placeholder-black"
                 placeholder="Cantidad de Pesos"
                 keyboardType="numeric"
                 value={cantidadPesos}
@@ -105,15 +117,18 @@ export default function CotizPrincipales() {
             </>
           ) : (
             <>
+              <Text className="text-white p-1 text-lg">Cantidad de Pesos</Text>
               <TextInput
-                className="bg-white p-2 rounded mb-2"
+                className="bg-slate-300 text-black p-2 rounded mb-2 focus:border-black placeholder-black"
                 placeholder="Cantidad de Pesos"
                 keyboardType="numeric"
                 value={cantidadPesos}
                 onChangeText={handleInputChange}
               />
+
+              <Text className="text-white p-1 text-lg">Cantidad de Dólares</Text>
               <TextInput
-                className="bg-gray-300 p-2 rounded mb-2"
+                className="bg-slate-300 text-black p-2 rounded mb-2 focus:border-black placeholder-black"
                 placeholder="Cantidad de Dólares"
                 keyboardType="numeric"
                 value={cantidadDolares}
@@ -121,24 +136,30 @@ export default function CotizPrincipales() {
               />
             </>
           )}
-          <View className="flex flex-row items-center mb-2">
-            <Switch
-              value={usarDolarBlue}
-              onValueChange={handleCheckboxChange}
-            />
-            <Text className="text-white ml-2">Usar Dólar Blue</Text>
+          <View className="flex flex-row">
+            <View className="flex flex-row items-center mb-2">
+              <Switch
+                value={usarDolarBlue}
+                onValueChange={handleCheckboxChange}
+              />
+              <Text className="text-white ml-2">Usar Dólar Blue</Text>
+            </View>
+            <Pressable 
+              onPress={handleSwitchInputs}  
+              onPressIn={() => setIsPressed(true)}
+              onPressOut={() => setIsPressed(false)}
+              className="w-6 mt-3 ml-40"
+              >
+              <FontAwesome6 
+                name="arrows-rotate" 
+                size={24} 
+                color={!isPressed ? 'white' : 'gray'}
+              />
+            </Pressable>
           </View>
-          <Pressable 
-            onPress={handleSwitchInputs}  
-            onPressIn={() => setIsPressed(true)}
-            onPressOut={() => setIsPressed(false)}
-            >
-            <FontAwesome6 
-              name="arrows-rotate" 
-              size={24} 
-              color={!isPressed ? 'white' : 'gray'}
-            />
-          </Pressable>
+          <View>
+            <Text className="text-white">Fecha de Actualización: {!usarDolarBlue ? formatDate(dolarOficial?.fechaActualizacion) : formatDate(dolarBlue?.fechaActualizacion)}</Text>
+          </View>
         </View>
       </View>
     </ThemeProvider>

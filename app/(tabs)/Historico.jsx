@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function MasMonedas() {
+export default function Historico() {
   return (
     <View>
-      <Text>MasMonedas</Text>
+      <Text>Historico</Text>
     </View>
   )
 }
