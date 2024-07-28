@@ -21,7 +21,7 @@ export default function index() {
         - Más Cotizaciones: acá vas a poder conocer el valor de las demás cotizaciones que se manejan en el país, como el dolar Tarjeta, Mayorista, Bolsa, etc.
         </Text>
         <Text className="text-white mb-2">
-        - Más Monedas: acá vas a poder consultar la cotización de otras monedas extranjeras, como el Euro, Real, Peso Chileno, etc.
+        - Histórico: acá vas a poder consultar la cotización del dólar oficial y blue de los últimos 15 días.
         </Text>
       </View>
     </ThemeProvider>

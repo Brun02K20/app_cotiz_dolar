@@ -1,4 +1,4 @@
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome5, FontAwesome6 } from '@expo/vector-icons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 import { useColorScheme } from 'react-native';
@@ -21,7 +21,7 @@ export default function TabLayout() {
             name="CotizPrincipales"
             options={{
               title: 'Principales',
-              tabBarIcon: ({ color }) => <FontAwesome5 size={28} name="chart-bar" color={color} />,
+              tabBarIcon: ({ color }) => <FontAwesome6 name="arrows-rotate" size={28} color={color} />,
             }}
           />
           <Tabs.Screen
@@ -35,7 +35,7 @@ export default function TabLayout() {
             name="Historico"
             options={{
               title: 'Histórico',
-              tabBarIcon: ({ color }) => <FontAwesome size={28} name="euro" color={color} />,
+              tabBarIcon: ({ color }) => <FontAwesome5 size={28} name="chart-bar" color={color} />,
             }}
           />
         </Tabs>
