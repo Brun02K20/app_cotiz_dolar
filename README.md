@@ -12,4 +12,4 @@ Esta aplicación consiste en un conversor de dólares a pesos y viceversa. Adem�
 - [DolarAPI](https://dolarapi.com/)
 - [ArgentinaDatos](https://argentinadatos.com)
 
-## Descargala acá: [Descargar](https://expo.dev/artifacts/eas/vpcKNQ7JQtRBQhJjxJs9Wv.apk)
+## Descargala [acá](https://expo.dev/artifacts/eas/vpcKNQ7JQtRBQhJjxJs9Wv.apk)
