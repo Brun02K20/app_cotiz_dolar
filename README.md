@@ -7,6 +7,7 @@ Esta aplicación consiste en un conversor de dólares a pesos y viceversa. Adem�
 - React Native
 - Expo
 - react-native-gifted-charts
+- tailwindcss (con native wind)
 
 ## Datos obtenidos de los siguientes sitios
 - [DolarAPI](https://dolarapi.com/)
